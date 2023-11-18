@@ -1,12 +1,12 @@
 import { useEffect, useCallback } from 'react';
 import { Overlay, ModalContent } from './Modal.styled';
 
-export const Modal = ({ largeImageURL, alt, modalClick }) => {
+export const Modal = ({ largeImageURL, alt, onCloseModal }) => {
   
   useEffect(() => {
     const keyDown = e => {
       if (e.code === 'Escape') {
-        modalClick();
+        onCloseModal();
       }
     };
 
@@ -15,15 +15,15 @@ export const Modal = ({ largeImageURL, alt, modalClick }) => {
     return () => {
       window.removeEventListener('keydown', keyDown);
     };
-  }, [modalClick]);
+  }, [onCloseModal]);
 
   const handleClick = useCallback(
     e => {
       if (e.target === e.currentTarget) {
-        modalClick();
+        onCloseModal();
       }
     },
-    [modalClick]
+    [onCloseModal]
   );
 
     return (
