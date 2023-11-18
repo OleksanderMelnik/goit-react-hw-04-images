@@ -20,7 +20,6 @@ export function App() {
   useEffect(() => {
     const fetchGallery = async () => {
       setLoading(true);
-
       try {
         const { hits, totalHits } = await fetchImage(searchQuery, galleryPage);
 
