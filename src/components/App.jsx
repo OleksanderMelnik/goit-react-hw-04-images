@@ -15,7 +15,7 @@ export function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isButtonShow, setShowModal] = useState(false);
-  const [totalHits, setTotalHits] = useState(0);
+
 
   useEffect(() => {
     const fetchGallery = async () => {
@@ -32,7 +32,7 @@ export function App() {
 
         setGalleryItems(prevImages => [...prevImages, ...newImages]);
         setShowModal(galleryPage < Math.ceil(totalHits / 12 ));
-        setTotalHits(totalHits);
+        
 
       } catch (error) {
         setError(error);
