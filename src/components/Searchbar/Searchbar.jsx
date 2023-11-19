@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import { SearchbarHeader, Form, Button, Input } from './Searchbar.styled';
 
 export const Searchbar = ({onSubmit}) => {
@@ -13,6 +14,10 @@ const handleSubmit = e => {
     onSubmit(searchQuery);
     reset();
     
+    if (searchQuery.trim() === '') {
+      toast.info('Please, enter search word!');
+      return;
+    }
   };
 
 const reset = () => {
