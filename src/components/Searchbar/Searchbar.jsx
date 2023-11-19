@@ -11,13 +11,13 @@ const  handleQueryChange = e => {
 
 const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(searchQuery);
-    reset();
     
     if (searchQuery.trim() === '') {
       toast.info('Please, enter search word!');
       return;
     }
+    onSubmit(searchQuery);
+    reset();
   };
 
 const reset = () => {

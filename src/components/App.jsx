@@ -32,8 +32,7 @@ export function App() {
 
         setGalleryItems(prevImages => [...prevImages, ...newImages]);
         setShowModal(galleryPage < Math.ceil(totalHits / 12 ));
-        
-
+       
       } catch (error) {
         setError(error);
         toast.error('Oops!!! Something went wrong');
